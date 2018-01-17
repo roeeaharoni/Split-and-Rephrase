@@ -26,9 +26,13 @@ def process_sentdata(data, datasplit):
     if complexid in datasplit["TEST"]:
         # Test example
         directory = "evaluation-directories/test/"+str(complexid)
-    #     directory = "evaluation-directories/test-lowercased/"+str(complexid)
     else:
-        return
+        if complexid in datasplit["VALIDATION"]:
+            # Test example
+            directory = "evaluation-directories/validation/"+str(complexid)
+    #     directory = "evaluation-directories/test-lowercased/"+str(complexid)
+        else:
+            return
 
     # elif complexid in datasplit["VALIDATION"]:
     #     # Validation 
